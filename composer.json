@@ -1,0 +1,13 @@
+{
+    "name": "m7b/patient-management-module",
+    "description": "A patient management module adhering to provided mockup.",
+    "require": {
+        "php": ">=7.4",
+        "smarty/smarty": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}
