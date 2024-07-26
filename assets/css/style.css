@@ -1,0 +1,72 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #02a499;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.content {
+    padding: 20px;
+}
+
+.stat-card {
+    background-color: #02a499;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card h5 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.stat-card p {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.doctor-card {
+    margin-bottom: 15px;
+}
+
+.doctor-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body strong {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card-body small {
+    font-size: 0.9em;
+    color: #666;
+}

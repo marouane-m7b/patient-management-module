@@ -15,11 +15,14 @@ class PatientController {
 
     public function index() {
         $patients = $this->model->getAllPatients();
-        $this->view->render('list', ['patients' => $patients]);
+        $doctors = $this->model->getAllDoctors();
+        $stats = $this->model->getStatistics();
+        $this->view->render('list', ['patients' => $patients, 'doctors' => $doctors, 'stats' => $stats]);
     }
 
     public function create() {
-        $this->view->render('create');
+        $doctors = $this->model->getAllDoctors();
+        $this->view->render('create', ['doctors' => $doctors]);
     }
 
     public function store($data) {
@@ -29,7 +32,8 @@ class PatientController {
 
     public function edit($id) {
         $patient = $this->model->getPatientById($id);
-        $this->view->render('edit', ['patient' => $patient]);
+        $doctors = $this->model->getAllDoctors();
+        $this->view->render('edit', ['patient' => $patient, 'doctors' => $doctors]);
     }
 
     public function update($data) {
@@ -42,3 +46,4 @@ class PatientController {
         header('Location: index.php');
     }
 }
+?>
