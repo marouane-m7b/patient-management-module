@@ -7,6 +7,7 @@ class PatientModel {
     public function __construct($dbConfig) {
         $dsn = 'mysql:host=' . $dbConfig['host'] . ';dbname=' . $dbConfig['dbname'];
         $this->pdo = new \PDO($dsn, $dbConfig['user'], $dbConfig['password']);
+        $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
     public function getAllPatients() {
@@ -37,6 +38,19 @@ class PatientModel {
 
     public function getAllDoctors() {
         $stmt = $this->pdo->query('SELECT * FROM doctors');
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAllAppointments() {
+        $stmt = $this->pdo->query('
+            SELECT 
+                appointments.*, 
+                patients.name AS patient_name, 
+                doctors.name AS doctor_name 
+            FROM appointments 
+            JOIN patients ON appointments.patient_id = patients.id 
+            JOIN doctors ON appointments.doctor_id = doctors.id
+        ');
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 

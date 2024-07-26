@@ -45,5 +45,14 @@ class PatientController {
         $this->model->deletePatient($id);
         header('Location: index.php');
     }
+
+    public function showDoctors() {
+        $doctors = $this->model->getAllDoctors();
+        $this->view->render('doctors/list', ['doctors' => $doctors]);
+    }
+
+    public function showAppointments() {
+        $appointments = $this->model->getAllAppointments();
+        $this->view->render('appointments/list', ['appointments' => $appointments]);
+    }
 }
-?>

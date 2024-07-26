@@ -70,3 +70,8 @@ body {
     font-size: 0.9em;
     color: #666;
 }
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
