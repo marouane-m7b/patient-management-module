@@ -5,6 +5,11 @@ class PatientModel {
     private $pdo;
 
     public function __construct($dbConfig) {
+        // Check if database configuration is provided
+        if (!$dbConfig || !isset($dbConfig['host'], $dbConfig['dbname'], $dbConfig['user'], $dbConfig['password'])) {
+            throw new \Exception('Invalid database configuration.');
+        }
+        
         $dsn = 'mysql:host=' . $dbConfig['host'] . ';dbname=' . $dbConfig['dbname'];
         $this->pdo = new \PDO($dsn, $dbConfig['user'], $dbConfig['password']);
     }

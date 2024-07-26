@@ -1,5 +1,5 @@
 {
-    "name": "m7b/patient-management-module",
+    "name": "yourname/patient-management-module",
     "description": "A patient management module adhering to provided mockup.",
     "require": {
         "php": ">=7.4",
